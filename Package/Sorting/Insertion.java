@@ -8,25 +8,16 @@ public class Insertion {
     }
     static void Sort(int[] nums)
     {
-        for(int i=0;i<nums.length-1;i++)
+        for(int i=1;i<nums.length;i++)
         {
-            for(int j=i+1;j>0;j--)
+            int key=nums[i];
+            int j=i-1;
+            while(j>=0 && nums[j]>key)
             {
-                if(nums[j]<nums[j-1])
-                {
-                    swap(nums,j,j-1);
-                }
-                else
-                {
-                    break;
-                }
+                nums[j+1]=nums[j];
+                j--;
             }
+            nums[j+1]=key;
         }
-    }
-    static void swap(int[] nums,int a,int b)
-    {
-        int temp=nums[b];
-        nums[b]=nums[a];
-        nums[a]=temp;
     }
 }
