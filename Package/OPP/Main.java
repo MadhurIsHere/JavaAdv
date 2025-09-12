@@ -1,5 +1,22 @@
 package OPP;
 
+class A
+{
+    String name;
+    final int num=0;
+
+    public A(String name) {
+        this.name = name;
+    }
+    public A()
+    {
+        name="madhur";
+    }
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Object is destroyed");
+    }
+}
 public class Main {
     public static void main(String[] args) {
         int[] roll =new int[5];
@@ -33,13 +50,13 @@ public class Main {
         System.out.println(another.name);
 
 
-//        for(int i=0;i<10000000;i++)
-//        {
-//            A dest=new A();
-//        }
+        for(int i=0;i<10000000;i++)
+        {
+            A dest=new A();
+        }
 
-        A obj=new A("hchsdc");
-        System.out.println(obj);
+//        A obj=new A("hchsdc");
+//        System.out.println(obj);
     }
 
 }
@@ -84,17 +101,4 @@ class Student
     }
 
 }
-class A
-{
-    String name;
-    final int num=0;
 
-    public A(String name) {
-        this.name = name;
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Object is destroyed");
-    }
-}
