@@ -1,5 +1,11 @@
 package OPP;
 
+class Employee{
+    float salary=1000;
+}
+class Programmer extends Employee{
+    int bonus=100;
+}
 class A
 {
     String name;
@@ -57,6 +63,9 @@ public class Main {
 
 //        A obj=new A("hchsdc");
 //        System.out.println(obj);
+        Programmer p=new Programmer();
+        System.out.println(p.salary);
+        System.out.println(p.bonus);
     }
 
 }

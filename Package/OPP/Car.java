@@ -20,5 +20,6 @@ public class Car {
         Car car1=new Car("Red",320,"F1");
         car1.display();
     }
+
 }
 
