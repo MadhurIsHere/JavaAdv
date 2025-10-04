@@ -28,7 +28,7 @@ public class CounterApp {
             jr.setLayout(new BorderLayout());
             jr.add(label,BorderLayout.CENTER);
             jr.add(panel);
-//            jr.add(inc,BorderLayout.EAST);
+            jr.add(inc,BorderLayout.SOUTH);
             jr.setSize(1000,750);
             jr.setLocationRelativeTo(null);
             jr.setVisible(true);

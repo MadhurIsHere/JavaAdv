@@ -30,5 +30,18 @@ public class Main {
         list.insertFirst(5);
         list.display();
         list.insertEnd(100);
+        list.displayReverse();
+        list.addAtAny(20,0);
+        list.display();
+        list.addAtAny(30,7);
+        list.addAtAny(20,21312);
+        list.display();
+        list.After(120,100);
+        list.display();
+//        DL neww=new DL();
+//        neww.insertEnd(23);
+//        neww.addAtAny(20,0);
+//        neww.display();
+//
     }
 }
