@@ -1,6 +1,7 @@
 package My2DGame;
 
 import Entity.Player;
+import Tile.TileManager;
 
 import java.awt.*;
 import javax.swing.JPanel;
@@ -14,21 +15,29 @@ public class GamePanel extends JPanel implements Runnable{ // inheritance and da
 
     public final int tileSize= originalTileSize*scale; // 48*48 tile (final size)
 
-    final int maxScreenCol=16; // 16 number of square in a row
-    final int maxScreenRow=12; // 12 number of rows so that the ratio could be 4:3
+    public final int maxScreenCol=16; // 16 number of square in a row
+    public final int maxScreenRow=12; // 12 number of rows so that the ratio could be 4:3
 
-    final int MaxScreenWidth=maxScreenCol*tileSize; // 16*48 =768 pixels
-    final int MaxScreenHeight=maxScreenRow*tileSize; // 12*48 = 576 pixels
+    public final int ScreenWidth=maxScreenCol*tileSize; // 16*48 =768 pixels
+    public final int ScreenHeight=maxScreenRow*tileSize; // 12*48 = 576 pixels
 
+    //WORLD SETTINGS
+    public final int maxWorldCol=50;
+    public final int maxWorldRow=50;
+    public final int worldWidth=maxWorldCol*tileSize;
+    public final int worldHeight=maxWorldRow*tileSize;
+
+
+    TileManager tileM=new TileManager(this);
     KeyHandler keyH=new KeyHandler(); // object for KeyHandler class
     Thread gameThreads;
-    Player player=new Player(this,keyH);
+    public Player player=new Player(this,keyH);
 
     int FPS=60;
 
     public GamePanel()
     {
-        this.setPreferredSize(new Dimension(MaxScreenWidth,MaxScreenHeight));
+        this.setPreferredSize(new Dimension(ScreenWidth,ScreenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true); // like flip-book (60 FPS)
         this.addKeyListener(keyH); // the key can be recognised
@@ -116,6 +125,7 @@ public class GamePanel extends JPanel implements Runnable{ // inheritance and da
     {
         super.paintComponent(g);
         Graphics2D g2=(Graphics2D)g;
+        tileM.draw(g2);
         player.draw(g2);
         g2.dispose();
     }

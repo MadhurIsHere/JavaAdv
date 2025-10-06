@@ -11,47 +11,48 @@ import java.io.IOException;
 public class Player extends Entity{
     GamePanel gp;
     KeyHandler keyH;
+    public final int screenX;
+    public final int screenY;
 
     public Player(GamePanel gp, KeyHandler keyH)
     {
         this.gp=gp;
         this.keyH=keyH;
+        screenX=gp.ScreenWidth/2-(gp.tileSize/2);
+        screenY=gp.ScreenHeight/2-(gp.tileSize/2);
         setDefaultValues();
         getPlayerImage();
     }
     public void setDefaultValues(){
-        x=100;
-        y=100;
+        worldX =23*gp.tileSize;
+        worldY=21*gp.tileSize;
         speed=4;
         direction="down";
     }
     public void update()
     {
-        if(keyH.upPressed)
-        {
-            direction="up";
-            y-=speed;
-        } else if (keyH.downPressed) {
-            direction="down";
-            y+=speed;
-        }
-        else if(keyH.rightPressed) {
-            direction="right";
-            x+=speed;
-        }
-        else if (keyH.leftPressed)
-        {
-            direction="left";
-            x-=speed;
-        }
-        spriteCounter++;
-        if(spriteCounter>10)
-        {
-            if(spriteNum ==1)
-                spriteNum=2;
-            else if (spriteNum==2)
-                spriteNum=1;
-            spriteCounter=0;
+//        if(keyH.upPressed || keyH.downPressed || keyH.leftPressed || keyH.rightPressed) {
+            if (keyH.upPressed) {
+                direction = "up";
+                worldY -= speed;
+            } else if (keyH.downPressed) {
+                direction = "down";
+                worldY += speed;
+            } else if (keyH.rightPressed) {
+                direction = "right";
+                worldX += speed;
+            } else if (keyH.leftPressed) {
+                direction = "left";
+                worldX-= speed;
+            }
+            spriteCounter++;
+            if (spriteCounter > 10) {
+                if (spriteNum == 1)
+                    spriteNum = 2;
+                else if (spriteNum == 2)
+                    spriteNum = 1;
+                spriteCounter = 0;
+//            }
         }
     }
     public void getPlayerImage()
@@ -73,8 +74,6 @@ public class Player extends Entity{
     }
     public void draw(Graphics2D g2)
     {
-//        g2.setBackground(Color.white);
-//        g2.fillRect(x,y,gp.tileSize,gp.tileSize);
         BufferedImage image=null;
 
         switch (direction){
@@ -112,6 +111,6 @@ public class Player extends Entity{
                 break;
         }
 
-        g2.drawImage(image,x,y,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(image,screenX,screenY,gp.tileSize,gp.tileSize,null);
     }
 }
