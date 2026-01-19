@@ -5,7 +5,7 @@ class Animal1 {  // uses Animal1 as Animal was used before in the same package
         System.out.println("Animal makes a sound");
     }
 }
-class Dog extends Animal1 {
+class Dog2 extends Animal1 {
     @Override
     void sound() {
         System.out.println("Dog barks");
@@ -16,7 +16,7 @@ public class Main3 {
         Animal1 myAnimal = new Animal1();
         myAnimal.sound();
 
-        Dog myDog = new Dog();
+        Dog2 myDog = new Dog2();
         myDog.sound();
     }
 }
