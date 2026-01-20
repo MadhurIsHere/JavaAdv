@@ -6,6 +6,33 @@
 #### Non-linear data structure
 #### collection of nodes 
 #### This is exactly one path between two nodes
+#omplete binary tree
+####at level i, there are 2^i no of nodes means all has level has 0 ot 2^i nodes
+
+in a omplete binary tree what is the total number of nodes with height h 
+
+total number of leaf nodes =2^h
+total number of internal nodes =(2^h) - 1
+so total is 2^(h+1)-1
+```java
+static TreeNode create(){
+	int data;
+	System.out.println("Enter the data ");
+	data=in.nextInt();
+	if(data==-1)
+	{
+		return null;
+	}
+	
+	TreeNode node=new TreeNode(data);
+	System.out.println("Enter the left node val");
+	node.left=create();
+	System.out.println("Enter the right node val");
+	node.right=create();
+
+	return node;
+}
+```
 
 # Binary Tree (DFS)
 ## **In-order Traversal (left root right)** 
