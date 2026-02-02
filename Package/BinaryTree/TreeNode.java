@@ -1,7 +1,5 @@
 package BinaryTree;
-
 import java.util.*;
-
 public class TreeNode {
     static Scanner in = new Scanner(System.in);
 
@@ -35,33 +33,6 @@ public class TreeNode {
 
             return node;
         }
-        // DFS Recursive
-        // Inorder -> left-root-right
-        static void dfs1(TreeNode root)
-        {
-            if(root==null) return;
-            dfs1(root.left);
-            System.out.println(root.val+" ");
-            dfs1(root.right);
-        }
-
-        // Preorder -> root-left-right
-        static void dfs2(TreeNode root)
-        {
-            if(root==null) return;
-            System.out.println(root.val+" ");
-            dfs2(root.left);
-            dfs2(root.right);
-        }
-
-        // PostOrder-> left-right-root
-        static void dfs3(TreeNode root)
-        {
-            if(root==null) return;
-            dfs3(root.left);
-            dfs3(root.right);
-            System.out.println(root.val+" ");
-        }
 
         // DFS iterative
         // Inorder -> This uses stack
@@ -88,7 +59,4 @@ public class TreeNode {
             }
             return list;
         }
-
-        // Po
-
 }
