@@ -1,9 +1,13 @@
 package Bitwise;
-
+import java.util.*;
 public class Shifts {
     public static void main(String[] args) {
-//        prime(529);
-        pattern(10);
+        String[] ans=new String[4];
+        ans[0]="10";
+        ans[1]="2";
+        ans[3]="4";
+        System.out.println(ans[2]);
+        System.out.println(Arrays.toString(ans));
     }
     private static void prime(int n)
     {

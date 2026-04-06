@@ -68,10 +68,11 @@ public class BST {
             }
 
             else { // 2 child
-
+                TreeNode child=find(root.right);
+                root.val=child.val;
+                return root;
             }
         }
-
         return root;
     }
     static TreeNode find(TreeNode node)
@@ -83,3 +84,5 @@ public class BST {
         return node;
     }
 }
+
+// range in bst
