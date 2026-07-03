@@ -3,6 +3,7 @@
 Tree = Hierarchical data structure.
 
 Important Terms:
+
 - Root → Top node
 - Parent → Node above
 - Child → Node below
@@ -13,6 +14,7 @@ Binary Tree:
 Each node max 2 children.
 
 Why Trees:
+
 - Fast search
 - Hierarchical data
 - Used in DB indexing
@@ -26,10 +28,11 @@ Node right;
 }
 
 ## Question Done
+
 - Total Nodes
 - Height of the Tree
-- Dfs 
-    - Inorder 
+- Dfs
+    - Inorder
     - Pre Order
     - Post Order
 - Bfs

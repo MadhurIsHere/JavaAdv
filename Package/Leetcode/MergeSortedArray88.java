@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class MergeSortedArray88 {
     public static void main(String[] args) {
-        int[] nums1 = {1,4,6,0,0,0,0};  // first 3 numbers sorted: [1,4,6]
-        int[] nums2 = {2,3,5,7};        // sorted
+        int[] nums1 = {1, 4, 6, 0, 0, 0, 0};  // first 3 numbers sorted: [1,4,6]
+        int[] nums2 = {2, 3, 5, 7};        // sorted
         merge(nums1, 3, nums2, 4);
         System.out.println(Arrays.toString(nums1));
         Arrays.sort(nums1);

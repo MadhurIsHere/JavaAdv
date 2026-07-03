@@ -13,45 +13,42 @@ public class ContainsDuplicate217 {
 
         System.out.println(containsDuplicate(nums));
     }
+
     static public boolean containsDuplicate(int[] nums) {
-        sorting(nums,0,nums.length-1);
-        for(int i=0;i<nums.length-1;i++)
-        {
-            if (nums[i]==nums[i+1]){
+        sorting(nums, 0, nums.length - 1);
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
                 return true;
             }
         }
         return false;
     }
-    static void sorting(int[] nums,int low,int hi){
-        if(low>=hi)
+
+    static void sorting(int[] nums, int low, int hi) {
+        if (low >= hi)
             return;
         else {
-            int start=low;
-            int end=hi;
-            int mid=start+(end-start)/2;
-            int piv=nums[mid];
-            while(start<=end)
-            {
-                while (nums[start]<piv)
-                {
+            int start = low;
+            int end = hi;
+            int mid = start + (end - start) / 2;
+            int piv = nums[mid];
+            while (start <= end) {
+                while (nums[start] < piv) {
                     start++;
                 }
-                while (nums[end]>piv)
-                {
+                while (nums[end] > piv) {
                     end--;
                 }
-                if(start<=end)
-                {
-                    int temp=nums[start];
-                    nums[start]=nums[end];
-                    nums[end]=temp;
+                if (start <= end) {
+                    int temp = nums[start];
+                    nums[start] = nums[end];
+                    nums[end] = temp;
                     start++;
                     end--;
                 }
             }
-            sorting(nums,low,end);
-            sorting(nums,start,hi);
+            sorting(nums, low, end);
+            sorting(nums, start, hi);
         }
     }
 }

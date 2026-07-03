@@ -1,9 +1,9 @@
 package Project;
 
 // File: GameFrame.java
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class GameFrame extends JFrame {
     private Board board;

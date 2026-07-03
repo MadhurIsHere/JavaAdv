@@ -3,29 +3,27 @@ package Recursion;
 public class Patterns {
     public static void main(String[] args) {
 //        triangle(4,0);
-        triangle2(4,0);
+        triangle2(4, 0);
     }
-    static void triangle(int row,int col)
-    {
-        if(col==row) {
+
+    static void triangle(int row, int col) {
+        if (col == row) {
             System.out.println(" ");
-            col=0;
+            col = 0;
             row -= 1;
         }
-        if(row==0 && col==0) return;
+        if (row == 0 && col == 0) return;
         System.out.print("* ");
-        triangle(row,col+1);
+        triangle(row, col + 1);
     }
-    static void triangle2(int row,int col)
-    {
-        if(row==0) return;
-        if(col<row)
-        {
-            triangle2(row,col+1);
+
+    static void triangle2(int row, int col) {
+        if (row == 0) return;
+        if (col < row) {
+            triangle2(row, col + 1);
             System.out.print("* ");
-        }
-        else {
-            triangle2(row-1,0);
+        } else {
+            triangle2(row - 1, 0);
             System.out.println(" ");
 
         }

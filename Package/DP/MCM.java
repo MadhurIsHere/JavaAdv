@@ -3,31 +3,31 @@ package DP;
 import java.util.Arrays;
 
 public class MCM {
-    static int mcm(int[] arr,int i,int j) {
+    static int mcm(int[] arr, int i, int j) {
         if (i >= j) return 0;
 
-        if(t[i][j]!=-1) return t[i][j];
+        if (t[i][j] != -1) return t[i][j];
         int k = i;
-        int min=Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         while (k < j) {
-            int temp=mcm(arr,i,k)+mcm(arr,k+1,j)+arr[i-1]*arr[k]*arr[j];
-            if(min>temp) min=temp;
+            int temp = mcm(arr, i, k) + mcm(arr, k + 1, j) + arr[i - 1] * arr[k] * arr[j];
+            if (min > temp) min = temp;
             k++;
         }
-        return t[i][j]=min;
+        return t[i][j] = min;
     }
+
     static int[][] t;
+
     public static void main(String[] args) {
-        int[] arr={1,2,1,4,1};
-        t=new int[arr.length][arr.length];
-        for(int[] row:t)
-        {
-            Arrays.fill(row,-1);
+        int[] arr = {1, 2, 1, 4, 1};
+        t = new int[arr.length][arr.length];
+        for (int[] row : t) {
+            Arrays.fill(row, -1);
         }
 
-        System.out.println(mcm(arr,1,arr.length-1));
-        for(int[] row:t)
-        {
+        System.out.println(mcm(arr, 1, arr.length - 1));
+        for (int[] row : t) {
             System.out.println(Arrays.toString(row));
         }
 
@@ -41,15 +41,14 @@ public class MCM {
                 int j = i + L - 1;
                 dp[i][j] = Integer.MAX_VALUE;
                 for (int k = i; k < j; k++) {
-                    int cost = dp[i][k] + dp[k+1][j] + arr[i-1]*arr[k]*arr[j];
+                    int cost = dp[i][k] + dp[k + 1][j] + arr[i - 1] * arr[k] * arr[j];
                     dp[i][j] = Math.min(dp[i][j], cost);
                 }
             }
         }
-        for(int[] row:dp)
-        {
+        for (int[] row : dp) {
             System.out.println(Arrays.toString(row));
         }
-        System.out.println(dp[1][n-1]);
+        System.out.println(dp[1][n - 1]);
     }
 }

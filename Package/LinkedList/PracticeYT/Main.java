@@ -22,7 +22,7 @@ public class Main {
 //        System.out.println(list.getsize());
 //        System.out.println(list.deleteAtAny(4));
 //        list.display();
-        DL list=new DL();
+        DL list = new DL();
         list.insertFirst(1);
         list.insertFirst(2);
         list.insertFirst(3);
@@ -31,12 +31,12 @@ public class Main {
         list.display();
         list.insertEnd(100);
         list.displayReverse();
-        list.addAtAny(20,0);
+        list.addAtAny(20, 0);
         list.display();
-        list.addAtAny(30,7);
-        list.addAtAny(20,21312);
+        list.addAtAny(30, 7);
+        list.addAtAny(20, 21312);
         list.display();
-        list.After(120,100);
+        list.After(120, 100);
         list.display();
 //        DL neww=new DL();
 //        neww.insertEnd(23);

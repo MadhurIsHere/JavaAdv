@@ -1,36 +1,39 @@
 package OPP;
 
-class Employee{
-    float salary=1000;
+class Employee {
+    float salary = 1000;
 }
-class Programmer extends Employee{
-    int bonus=100;
+
+class Programmer extends Employee {
+    int bonus = 100;
 }
-class A
-{
+
+class A {
     String name;
-    final int num=0;
+    final int num = 0;
 
     public A(String name) {
         this.name = name;
     }
-    public A()
-    {
-        name="madhur";
+
+    public A() {
+        name = "madhur";
     }
+
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Object is destroyed");
     }
 }
+
 public class Main {
     public static void main(String[] args) {
-        int[] roll =new int[5];
-        String[] name=new String[5];
-        float[] marks=new float[5];
+        int[] roll = new int[5];
+        String[] name = new String[5];
+        float[] marks = new float[5];
 
-        Student students=new Student();
-        Student neww=new Student(128,"Madhur",9.44f);
+        Student students = new Student();
+        Student neww = new Student(128, "Madhur", 9.44f);
 
 //        students.name="Madhur Rastogi";
 //        students.roll=128;
@@ -45,37 +48,36 @@ public class Main {
         System.out.println(" ");
 
 
-
         System.out.println(neww.marks);
         System.out.println(neww.roll);
         System.out.println(neww.name);
 
-        Student random=new Student(students);
+        Student random = new Student(students);
 
-        Student another=new Student();
+        Student another = new Student();
         System.out.println(another.name);
 
 
-        for(int i=0;i<10000000;i++)
-        {
-            A dest=new A();
+        for (int i = 0; i < 10000000; i++) {
+            A dest = new A();
         }
 
 //        A obj=new A("hchsdc");
 //        System.out.println(obj);
-        Programmer p=new Programmer();
+        Programmer p = new Programmer();
         System.out.println(p.salary);
         System.out.println(p.bonus);
     }
 
 }
-class Student
-{
+
+class Student {
     // global variables
     int roll;
     String name;
-    float marks=9.68f;      // overriding
+    float marks = 9.68f;      // overriding
     boolean bool;
+
     // 2 constructors of same name with different args--> Constructor overloading;
     // without args
 //    Student(){
@@ -85,28 +87,26 @@ class Student
 //        this.bool=true;
 //    }
     Student() {
-        this(14,"defalut",10);
+        this(14, "defalut", 10);
     }
 
     // Student one=new Student (128,"Madhur",85.6);
     // here, this will be replaced by one;
-    Student(int roll, String name, float marks){
-        this.roll=roll;
-        this.name=name;
-        this.marks=marks;
+    Student(int roll, String name, float marks) {
+        this.roll = roll;
+        this.name = name;
+        this.marks = marks;
     }
 
     //
-    Student (Student other)
-    {
-        this.marks=other.marks;
-        this.name=other.name;
-        this.roll=other.roll;
+    Student(Student other) {
+        this.marks = other.marks;
+        this.name = other.name;
+        this.roll = other.roll;
     }
 
-    void greeting()
-    {
-        System.out.println("Hello! My name is "+this.name);
+    void greeting() {
+        System.out.println("Hello! My name is " + this.name);
     }
 
 }

@@ -1,14 +1,13 @@
 package Leetcode;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CheckifOneStringSwapCanMakeStringsEqual1790 {
     public static void main(String[] args) {
-        System.out.println(areAlmostEqual("madhur","madhru"));
+        System.out.println(areAlmostEqual("madhur", "madhru"));
     }
+
     public static boolean areAlmostEqual(String s1, String s2) {
 //        char[] c1=s1.toCharArray();
 //        char[] c2=s2.toCharArray();
@@ -24,19 +23,17 @@ public class CheckifOneStringSwapCanMakeStringsEqual1790 {
 //        }
 //        return true;
 
-        if(s1.equals(s2)) return true;
+        if (s1.equals(s2)) return true;
 
-        List<Integer> diff=new ArrayList<>();
-        for(int i=0;i<s1.length();i++)
-        {
-            if(!(s1.charAt(i)==s2.charAt(i)))
-            {
+        List<Integer> diff = new ArrayList<>();
+        for (int i = 0; i < s1.length(); i++) {
+            if (!(s1.charAt(i) == s2.charAt(i))) {
                 diff.add(i);
             }
         }
-        if(diff.size()!=2) return false;
+        if (diff.size() != 2) return false;
 
-        int i=diff.get(0),j=diff.get(1);
-        return s1.charAt(i)==s2.charAt(j) && s1.charAt(j)==s2.charAt(i);
+        int i = diff.get(0), j = diff.get(1);
+        return s1.charAt(i) == s2.charAt(j) && s1.charAt(j) == s2.charAt(i);
     }
 }

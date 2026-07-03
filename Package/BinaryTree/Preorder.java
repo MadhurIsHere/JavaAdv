@@ -1,9 +1,13 @@
 package BinaryTree;
-import java.util.*;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 public class Preorder {
-    static void preorder(TreeNode root)
-    {
-        if(root==null) return;
+    static void preorder(TreeNode root) {
+        if (root == null) return;
 
         System.out.print(root.val + " ");
 
@@ -11,23 +15,19 @@ public class Preorder {
         preorder(root.right);
     }
 
-    static List<Integer> preIerative(TreeNode root)
-    {
-        List<Integer> res=new ArrayList<>();
-        if(root==null) return res;
+    static List<Integer> preIerative(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) return res;
 
-        Deque<TreeNode> stack=new ArrayDeque<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
 
         stack.push(root);
-        while (!stack.isEmpty())
-        {
-            TreeNode curr=stack.pop();
-            if(curr.right!=null)
-            {
+        while (!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+            if (curr.right != null) {
                 stack.push(curr.right);
             }
-            if(curr.left!=null)
-            {
+            if (curr.left != null) {
                 stack.push(curr.left);
             }
             res.add(curr.val);
